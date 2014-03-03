@@ -1,9 +1,13 @@
-function generateRecatangleWave(numTerms)
+function generateTriangleWave(numTerms)
 	curve = 'y = '
 	n = numTerms * 1
 	for m = 1:n
 		if mod(m,2) == 1
-			b = 1/m
+			if mod(m,4) == 1
+				b = 1/(m*m)
+			else
+				b = -1/(m*m)
+			end
 		else
 			b = 0
 		end
